@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Car db</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <p sec:authentication="name">Name</p>
+
+  <body>
+    <p>Welcome to car application!</p>
+    <p><a href="/carlist">Show cars...</a></p>
+    <a href="/owner/ownerlist">Show owners...</a><br />
+
+    <form th:action="@{/logout}" method="post">
+      <input type="submit" value="Uloskirjautuminen" />
+    </form>
+  </body>
+</html>

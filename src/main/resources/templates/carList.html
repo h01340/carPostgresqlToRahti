@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <title>Cars</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+</head>
+<h1>Cars</h1>
+    <table>
+		<tr>
+			<th>Id</th>
+		    <th>Brand</th>
+		    <th>Model</th>
+		</tr>  
+    	<tr th:each = "car : ${cars}">
+			<td th:text="${car.id}" disabled></td>
+    		<td th:text="${car.brand}"></td>
+    		<td th:text="${car.model}"></td>
+    		<!--<td th:text="${car?.owner?.firstName != null && car?.owner?.lastName != null ? car?.owner?.firstName + ' ' + car?.owner?.lastName : 'Unknown'}"></td> -->
+			<td th:text="${car.owner?.firstName != null && car.owner?.lastName != null ? car?.owner?.firstName + ' ' + car?.owner?.lastName : 'Unknown'}"></td>
+			<!--  <td th:text="${car.owner.lastName}"></td> -->
+			
+    		
+    	</tr>
+     </table>
+
+     
+     <a href="/main">Back to main page</a>
+     
+     
+</body>
+</html>
